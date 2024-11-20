@@ -90,6 +90,7 @@ How many patients are there in each age group category (e.g., under 20, 20-30, 3
 Sample table: Patients Table 
  
 Answer: 
+
 WITH PatientAges AS ( 
     SELECT  
         (strftime('%Y', 'now') - strftime('%Y', DateOfBirth) -  
