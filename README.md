@@ -78,9 +78,9 @@ FROM Appointments
 GROUP BY strftime('%H',AppointmentDateTime) 
 ORDER BY HourOfDay; 
  
-Output: 
-![image](https://github.com/user-attachments/assets/537e0add-71eb-4d14-bf46-9758b1388a0d)
+Output:
 
+![image](https://github.com/user-attachments/assets/5a512c7b-eb13-488b-b371-265a519d34af)
  
 # Question 2: 
 How many patients are there in each age group category (e.g., under 20, 20-30, 30-40, etc.)? 
