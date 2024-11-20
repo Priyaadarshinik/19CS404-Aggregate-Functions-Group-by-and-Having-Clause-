@@ -95,6 +95,7 @@ Answer:
  
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/8c162ac8-2420-44c1-ac5e-e9cfb08607c7)
  
  
