@@ -91,26 +91,8 @@ Sample table: Patients Table
  
 Answer: 
 
-WITH PatientAges AS ( 
-    SELECT  
-        (strftime('%Y', 'now') - strftime('%Y', DateOfBirth) -  
-         (strftime('%m', 'now') < strftime('%m', DateOfBirth)) -  
-         ((strftime('%m', 'now') = strftime('%m', DateOfBirth))  
-          AND (strftime('%d', 'now') < strftime('%d', DateOfBirth)))) AS Age 
-    FROM Patients 
-) 
-SELECT  
-    CASE 
-        WHEN Age < 20 THEN 'Under 20' 
-        WHEN Age BETWEEN 20 AND 29 THEN '20-30' 
-        WHEN Age BETWEEN 30 AND 39 THEN '31-40'
-        WHEN Age BETWEEN 40 AND 49 THEN '41-50' 
-        ELSE 'Above 50' 
-    END AS AgeGroup, 
-    COUNT(*) AS TotalPatients 
-FROM PatientAges 
-GROUP BY AgeGroup 
-ORDER BY AgeGroup; 
+![image](https://github.com/user-attachments/assets/dbb134af-b597-48c3-aec5-01155fb4fef7)
+ 
  
 Output: 
 ![image](https://github.com/user-attachments/assets/8c162ac8-2420-44c1-ac5e-e9cfb08607c7)
