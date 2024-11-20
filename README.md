@@ -12,32 +12,35 @@ used to return a single value for each group.
 The most commonly used SQL aggregate functions are: 
  
 MIN() - returns the smallest value within the selected column 
+
 Syntax: 
 SELECT MIN(column_name) FROM table_name 
 WHERE condition; 
 Example: SELECT MIN (Sal) FROM emp; 
  
 MAX() - returns the largest value within the selected column 
+
 Syntax: 
-NAME: ANU VARSHINI M B   REG NO: 212223240010
 SELECT MAX(column_name) FROM table_name 
 WHERE condition; 
 Example: SELECT MAX (Sal) FROM emp; 
  
 COUNT() - returns the number of rows in a set 
+
 Syntax: 
 SELECT COUNT(column_name) FROM table_name 
 WHERE condition; 
 Example: SELECT COUNT (Sal) FROM emp; 
  
 SUM() - returns the total sum of a numerical column 
+
 Syntax: 
 SELECT SUM(column_name) 
- 
-FROM table_name WHERE condition; 
+ FROM table_name WHERE condition; 
 Example: SELECT SUM (Sal) From emp; 
  
 AVG() - returns the average value of a numerical column 
+
 Syntax: 
 SELECT AVG(column_name) FROM table_name 
 WHERE condition; 
@@ -127,20 +130,17 @@ NAME: ANU VARSHINI M B   REG NO: 212223240010
 ORDER BY Frequency; 
  
 Output: 
- 
+
+![image](https://github.com/user-attachments/assets/acfc28ee-bd83-4018-9108-f01d006b1264)
+
  
 # Question 4: 
 Write a SQL query to Calculate the average income of the employees with names starting with 
 'A':  
 Table: employee 
-name        type 
-----------  ---------- 
-id          INTEGER 
-name        TEXT 
-age         INTEGER 
-city        TEXT 
-income      INTEGER 
- 
+
+![image](https://github.com/user-attachments/assets/4cbc3e0a-90cf-4025-ad70-a1d9a9c0e700)
+
 Answer: 
 SELECT  
     AVG(income) AS avg_income 
@@ -148,19 +148,22 @@ FROM employee
 WHERE name LIKE 'A%'; 
  
 Output: 
-![image](https://github.com/user-attachments/assets/acfc28ee-bd83-4018-9108-f01d006b1264)
 
- 
+ ![image](https://github.com/user-attachments/assets/5012277d-8220-4a47-96d9-aa7ecb4e9164)
+
 # Question 5: 
 Write a SQL query to calculate the total number of working hours of all employees 
 Sample table: employee1 
  
 Answer: 
+
 SELECT  
     SUM(workhour) AS "Total working hours" 
 FROM employee1; 
  
 Output: 
+
+![image](https://github.com/user-attachments/assets/bec63914-878d-45f4-ac28-c88108319019)
  
  
 # Question 6: 
@@ -168,30 +171,28 @@ Write a SQL query to calculate total purchase amount of all orders. Return total
 amount. 
 
 Sample table: orders 
-ord_no      purch_amt   ord_date    customer_id  salesman_id
-----------  ----------  ----------  -----------  ----------- 
-70001       150.5       2012-10-05  3005         5002 
-70009       270.65      2012-09-10  3001         5005 
-70002       65.26       2012-10-05  3002         5001 
- 
+![image](https://github.com/user-attachments/assets/87353c88-49fc-46c6-80ca-02c40cce10d3)
+
 Answer: 
 SELECT SUM(purch_amt) AS TOTAL FROM orders; 
+
 Output: 
  
- 
+![image](https://github.com/user-attachments/assets/fda1da94-3236-4d66-8553-1cef020ca502)
+
 # Question 7: 
 Write a SQL query to count the number of customers. Return number of customers. 
 Sample table: customer 
-customer_id |   cust_name    |    city    | grade | salesman_id 
--------------+----------------+------------+-------+------------- 
-        3002 | Nick Rimando   | New York   |   100 |        5001 
-        3007 | Brad Davis     | New York   |   200 |        5001 
-        3005 | Graham Zusi    | California |   200 |        5002 
- 
+
+![image](https://github.com/user-attachments/assets/b5c6fd34-0bbd-47cb-906e-e34dbe57c0d2)
+
 Answer: 
+
 SELECT COUNT(cust_name) AS COUNT FROM customer;
+
 Output: 
- 
+ ![image](https://github.com/user-attachments/assets/dec9cd56-24f7-46b3-a428-839f06ad480f)
+
  
 # Question 8: 
 Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates 
@@ -199,41 +200,47 @@ the minimum work hours for each date, and excludes dates where the minimum work 
 less than 10. 
  
 Answer: 
+
 SELECT jdate,MIN(workhour) AS "MIN(workhour)" FROM 
 employee1 GROUP BY jdate 
 HAVING MIN(workhour)<10; 
  
 Output: 
- 
+
+![image](https://github.com/user-attachments/assets/fb564fdf-915d-422a-9468-af38485ca6e7)
+
 # Question 9: 
 Write the SQL query that achieves the grouping of data by age intervals using the expression 
 (age/5)5, calculates the average age for each group, and excludes groups where the average age 
 is not less than 24. 
  
 Answer: 
+
 SELECT (age -(age%5)) AS age_group, AVG(age) AS "AVG(age)" 
 FROM customer1  
 GROUP BY age_group 
 HAVING AVG(age)<=24; 
  
 Output: 
- 
- 
+
+![image](https://github.com/user-attachments/assets/5d6a081a-6fe8-4226-86b3-2d2b8687ac6e)
+
 # Question 10: 
 Write the SQL query that achieves the grouping of data by occupation, calculates the minimum 
 work hours for each occupation, and excludes occupations where the minimum work hour is not 
 greater than 8. 
  
 Answer: 
+
 SELECT occupation, MIN(workhour) AS "MIN(workhour)" 
 FROM employee1 
 group by occupation 
 having min(workhour)>8; 
  
 Output:  
- 
- 
- 
-Result: 
+
+![image](https://github.com/user-attachments/assets/5d373c34-f7be-4cef-8b36-3b41766309a3)
+
+# Result: 
  
 Thus , the SQL queries to implement aggregate functions have been executed successfully
